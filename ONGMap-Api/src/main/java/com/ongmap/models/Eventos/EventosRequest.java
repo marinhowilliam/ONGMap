@@ -3,7 +3,7 @@ package com.ongmap.models.Eventos;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
-public record EventosRequest(@Pattern(value = "String nome", message = "NOME invalido!")
+public record EventosRequest(@NotBlank
                              String nome,
                              @NotBlank
                              String objetivo,
