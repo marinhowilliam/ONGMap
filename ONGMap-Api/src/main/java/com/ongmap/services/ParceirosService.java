@@ -1,6 +1,6 @@
 package com.ongmap.services;
 
-import com.ongmap.models.parceiros.Parceiros;
+import com.ongmap.models.Parceiros.Parceiros;
 import com.ongmap.repositories.ParceirosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

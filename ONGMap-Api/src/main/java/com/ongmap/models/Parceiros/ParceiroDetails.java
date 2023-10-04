@@ -1,4 +1,4 @@
-package com.ongmap.models.parceiros;
+package com.ongmap.models.Parceiros;
 
 public record   ParceiroDetails(String cnpj,
                               String nome,

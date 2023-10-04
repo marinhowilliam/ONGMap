@@ -1,4 +1,4 @@
-package com.ongmap.models.parceiros;
+package com.ongmap.models.Parceiros;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

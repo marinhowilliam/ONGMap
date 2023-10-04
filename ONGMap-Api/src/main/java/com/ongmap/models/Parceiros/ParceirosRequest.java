@@ -1,4 +1,4 @@
-package com.ongmap.models.parceiros;
+package com.ongmap.models.Parceiros;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

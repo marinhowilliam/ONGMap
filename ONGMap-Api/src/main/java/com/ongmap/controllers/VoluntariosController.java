@@ -2,8 +2,6 @@ package com.ongmap.controllers;
 
 import com.ongmap.models.Voluntarios.VoluntarioDetails;
 import com.ongmap.models.Voluntarios.VoluntarioRequest;
-import com.ongmap.models.Voluntarios.Voluntarios;
-import com.ongmap.models.parceiros.ParceirosRequest;
 import com.ongmap.services.VoluntarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
