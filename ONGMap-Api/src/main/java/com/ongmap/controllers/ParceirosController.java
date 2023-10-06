@@ -1,7 +1,7 @@
 package com.ongmap.controllers;
 
-import com.ongmap.models.Parceiros.ParceiroDetails;
-import com.ongmap.models.Parceiros.ParceirosRequest;
+import com.ongmap.models.parceiro.ParceiroDetails;
+import com.ongmap.models.parceiro.ParceirosRequest;
 import com.ongmap.services.ParceirosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.ongmap.models.Voluntarios;
+package com.ongmap.models.voluntario;
 
 public record VoluntarioDetails(String cpf,
                                 String nome,

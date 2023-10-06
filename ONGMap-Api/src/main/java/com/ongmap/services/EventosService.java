@@ -1,6 +1,6 @@
 package com.ongmap.services;
 
-import com.ongmap.models.Eventos.Eventos;
+import com.ongmap.models.evento.Eventos;
 import com.ongmap.repositories.EventosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 

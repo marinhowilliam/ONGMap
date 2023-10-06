@@ -1,4 +1,4 @@
-package com.ongmap.models.Voluntarios;
+package com.ongmap.models.voluntario;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

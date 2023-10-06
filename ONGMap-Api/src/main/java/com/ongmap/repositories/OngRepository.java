@@ -1,6 +1,6 @@
 package com.ongmap.repositories;
 
-import com.ongmap.models.Ongs.Ong;
+import com.ongmap.models.ong.Ong;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OngRepository  extends JpaRepository<Ong, String> {

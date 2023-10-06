@@ -1,6 +1,6 @@
 package com.ongmap.services;
 
-import com.ongmap.models.Voluntarios.Voluntarios;
+import com.ongmap.models.voluntario.Voluntarios;
 import com.ongmap.repositories.VoluntariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

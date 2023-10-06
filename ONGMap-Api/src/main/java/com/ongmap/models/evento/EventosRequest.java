@@ -1,7 +1,6 @@
-package com.ongmap.models.Eventos;
+package com.ongmap.models.evento;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 
 public record EventosRequest(@NotBlank
                              String nome,

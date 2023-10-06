@@ -1,9 +1,8 @@
-package com.ongmap.models.Doadores;
+package com.ongmap.models.doadores;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

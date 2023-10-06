@@ -1,4 +1,4 @@
-package com.ongmap.models.Eventos;
+package com.ongmap.models.evento;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

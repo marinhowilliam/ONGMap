@@ -1,4 +1,4 @@
-package com.ongmap.models.Doadores;
+package com.ongmap.models.ong;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class Endereco {
-        private String rua;
-        private String cep;
-        private String numero;
-        private String logradouro;
-    }
+    private String rua;
+    private String cep;
+    private String numero;
+    private String logradouro;
 
+}

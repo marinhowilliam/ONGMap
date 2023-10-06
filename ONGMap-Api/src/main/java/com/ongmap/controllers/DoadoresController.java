@@ -1,8 +1,8 @@
 package com.ongmap.controllers;
 
 
-import com.ongmap.models.Doadores.DoadoresDetails;
-import com.ongmap.models.Doadores.DoadoresRequest;
+import com.ongmap.models.doadores.DoadoresDetails;
+import com.ongmap.models.doadores.DoadoresRequest;
 import com.ongmap.services.DoadoresService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.ongmap.models.Doadores;
+package com.ongmap.models.doadores;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

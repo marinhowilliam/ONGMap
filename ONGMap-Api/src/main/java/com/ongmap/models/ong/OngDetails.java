@@ -1,4 +1,4 @@
-package com.ongmap.models.Ongs;
+package com.ongmap.models.ong;
 
 public record OngDetails(String cnpj,
                          String nome,

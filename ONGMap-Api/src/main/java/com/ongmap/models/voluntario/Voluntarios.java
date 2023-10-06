@@ -1,4 +1,4 @@
-package com.ongmap.models.Voluntarios;
+package com.ongmap.models.voluntario;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

@@ -1,4 +1,4 @@
-package com.ongmap.models.Doadores;
+package com.ongmap.models.doadores;
 
 public record DoadoresDetails(String cpf,
                               String nome,

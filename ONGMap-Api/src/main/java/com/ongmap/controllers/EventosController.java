@@ -1,7 +1,7 @@
 package com.ongmap.controllers;
 
-import com.ongmap.models.Eventos.EventosDetails;
-import com.ongmap.models.Eventos.EventosRequest;
+import com.ongmap.models.evento.EventosDetails;
+import com.ongmap.models.evento.EventosRequest;
 import com.ongmap.services.EventosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.ongmap.models.Eventos;
+package com.ongmap.models.evento;
 
 public record EventosDetails(String nome,
                              String objetivo,

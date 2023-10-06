@@ -1,6 +1,6 @@
 package com.ongmap.services;
 
-import com.ongmap.models.Doadores.Doadores;
+import com.ongmap.models.doadores.Doadores;
 import com.ongmap.repositories.DoadoresRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

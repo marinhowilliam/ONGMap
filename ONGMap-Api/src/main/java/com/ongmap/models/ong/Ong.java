@@ -1,4 +1,4 @@
-package com.ongmap.models.Ongs;
+package com.ongmap.models.ong;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
