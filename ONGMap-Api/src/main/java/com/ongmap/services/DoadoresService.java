@@ -39,9 +39,6 @@ public class DoadoresService {
         if (doadores.getEndereco() != null){
             doadoresAux.setEndereco(doadores.getEndereco());
         }
-        if (doadores.getHistoricoDoacoes() != null){
-            doadoresAux.setHistoricoDoacoes(doadoresAux.getHistoricoDoacoes());
-        }
         return doadoresAux;
     }
 }

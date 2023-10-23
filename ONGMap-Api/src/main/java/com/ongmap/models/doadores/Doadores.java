@@ -17,7 +17,6 @@ public class Doadores {
     @Id
     private String cpf;
     private String nome;
-    private String historicoDoacoes;
     private String contato;
     @Embedded
     private String endereco;
