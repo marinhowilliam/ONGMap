@@ -1,6 +1,7 @@
 package com.ongmap.models.ong;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 public record OngRequest(@Pattern(regexp = "[0-9]{14}", message = "CNPJ inválido")
@@ -9,10 +10,10 @@ public record OngRequest(@Pattern(regexp = "[0-9]{14}", message = "CNPJ inválid
                          String nome,
                          @NotBlank(message = "Telefone não pode ser vazio")
                          String telefone,
-                         @NotBlank(message = "Endereço não pode ser vazio")
+                         @NotNull(message = "Endereço não pode ser vazio")
                          Endereco endereco,
                          String missao,
-                         @NotBlank(message = "Área de atuação não pode ser vazia")
+                         @NotNull(message = "Área de atuação não pode ser vazia")
                          AreaAtuacao areaAtuacao,
                          boolean ativo) {
     public Ong toOng() {
