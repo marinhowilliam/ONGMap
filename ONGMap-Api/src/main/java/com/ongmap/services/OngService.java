@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class    OngService {
+public class OngService {
     @Autowired
     public OngRepository ongRepository;
 

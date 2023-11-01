@@ -3,6 +3,8 @@ package com.ongmap.services;
 import com.ongmap.models.doadores.Doadores;
 import com.ongmap.repositories.DoadoresRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,8 +26,8 @@ public class DoadoresService {
         doadoresRepository.deleteById(cpf);
     }
 
-    public List<Doadores> findAll(){
-        return doadoresRepository.findAll();
+    public Page<Doadores> findAll(Pageable page){
+        return doadoresRepository.findAll(page);
     }
 
     public Doadores update(Doadores doadores){
