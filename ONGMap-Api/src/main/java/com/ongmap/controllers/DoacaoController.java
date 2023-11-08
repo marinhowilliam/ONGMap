@@ -1,7 +1,6 @@
 package com.ongmap.controllers;
 
-import com.ongmap.models.doacao.DinheiroRequest;
-import com.ongmap.models.doacao.DoacaoRequest;
+import com.ongmap.models.doacao.*;
 import com.ongmap.models.ong.OngDetails;
 import com.ongmap.models.ong.OngRequest;
 import com.ongmap.services.DoacaoService;
@@ -22,18 +21,18 @@ public class DoacaoController {
     private DoacaoService doacaoService;
 
     @PostMapping("/dinheiro")
-    public ResponseEntity create(@RequestBody @Valid DinheiroRequest doacao, UriComponentsBuilder uriBuilder){
-        var doacaoAux = doacao.toDoacao();
+    public ResponseEntity create(@RequestBody @Valid DoacaoRequest doacao, UriComponentsBuilder uriBuilder){
+        var doacaoAux = doacao.toDoacaoDinheiro();
         var aux = doacaoService.create(doacaoAux);
-        var uri = uriBuilder.path("/doacao/{cpf}").buildAndExpand(aux.getCpf()).toUri();
-        return ResponseEntity.created(uri).body(new OngDetails(aux));
+        var uri = uriBuilder.path("/doacao/{cpf}").buildAndExpand(aux.getId()).toUri();
+        return ResponseEntity.created(uri).body(new DinheiroResponse((Dinheiro) aux));
     }
 
     @PostMapping("/diversos")
-    public ResponseEntity create(@RequestBody @Valid DoacaoRequest doacao, UriComponentsBuilder uriBuilder){
-        var doacaoAux = doacao.
-                var aux = doacaoService.create(doacaoAux);
-        var uri = uriBuilder.path("/doacao/{cpf}").buildAndExpand(aux.getCpf()).toUri();
-        return ResponseEntity.created(uri).body(new OngDetails(aux));
+    public ResponseEntity createD(@RequestBody @Valid DoacaoRequest doacao, UriComponentsBuilder uriBuilder){
+        var doacaoAux = doacao.toDoacaoDiversos();
+        var aux = doacaoService.create(doacaoAux);
+        var uri = uriBuilder.path("/doacao/{cpf}").buildAndExpand(aux.getId()).toUri();
+        return ResponseEntity.created(uri).body(new DinheiroResponse((Dinheiro) doacaoAux));
     }
 }

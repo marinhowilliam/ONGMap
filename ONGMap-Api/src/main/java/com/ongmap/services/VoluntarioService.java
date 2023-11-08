@@ -3,6 +3,8 @@ package com.ongmap.services;
 import com.ongmap.models.voluntario.Voluntarios;
 import com.ongmap.repositories.VoluntariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,8 +26,8 @@ public class VoluntarioService {
         voluntariosRepository.deleteById(cpf);
     }
 
-    public List<Voluntarios> findAll(){
-        return voluntariosRepository.findAll();
+    public Page<Voluntarios> findAll(Pageable page){
+        return voluntariosRepository.findAll(page);
     }
 
     public Voluntarios update(Voluntarios voluntarios){

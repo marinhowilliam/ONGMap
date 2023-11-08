@@ -20,9 +20,7 @@ public class DinheiroService {
     }
 
     @Cacheable(value = "dinheiro", key = "#id")
-    public Dinheiro getById(Long id){
-        return dinheiroRepository.getReferenceById(id);
-    }
+    public Dinheiro getById(Long id) { return dinheiroRepository.getReferenceById(id);}
 
     @CacheEvict(value = "dinheiro", key = "#id")
     public void delete(Long id){

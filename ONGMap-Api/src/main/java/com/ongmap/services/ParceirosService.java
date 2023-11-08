@@ -3,6 +3,8 @@ package com.ongmap.services;
 import com.ongmap.models.parceiro.Parceiros;
 import com.ongmap.repositories.ParceirosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
 public class ParceirosService {
     @Autowired
     public ParceirosRepository parceirosRepository;
+
     public Parceiros create (Parceiros parceiros){
         return parceirosRepository.save(parceiros);
     }
@@ -24,8 +27,8 @@ public class ParceirosService {
         parceirosRepository.deleteById(cnpj);
     }
 
-    public List<Parceiros> findAll(){
-        return parceirosRepository.findAll();
+    public Page<Parceiros> findAll(Pageable pageable){
+        return parceirosRepository.findAll(pageable);
     }
 
     public Parceiros updade(Parceiros parceiros){
@@ -36,7 +39,7 @@ public class ParceirosService {
         if(parceiros.getTipoDeParceria() != null){
             parceirosAux.setTipoDeParceria(parceiros.getTipoDeParceria());
         }
-    return parceirosAux;
+        return parceirosAux;
     }
 }
 
