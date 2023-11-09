@@ -2,6 +2,7 @@ package com.ongmap.services;
 
 import com.ongmap.models.doacao.Doacao;
 import com.ongmap.repositories.DoacaoRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,8 +13,11 @@ public class DoacaoService {
 
     private DoacaoRepository doacaoRepository;
 
-    public DoacaoService(DoacaoRepository doacaoRepository){
+    private ModelMapper mapper;
+
+    public DoacaoService(DoacaoRepository doacaoRepository, ModelMapper mapper){
         this.doacaoRepository = doacaoRepository;
+        this.mapper = mapper;
     }
 
     public Doacao create(Doacao doacao){
@@ -30,5 +34,15 @@ public class DoacaoService {
 
     public void delete(Long id){
         doacaoRepository.deleteById(id);
+    }
+
+    public Doacao atualizar(Doacao doacao){
+        var doacaoAux = doacaoRepository.findById(doacao.getId()).orElse(null);
+        if(doacaoAux != null){
+            mapper.map(doacao, doacaoAux);
+            return doacaoRepository.save(doacaoAux);
+        }else {
+            throw new RuntimeException("Doação não encontrado");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.ongmap.controllers;
 
+import com.ongmap.models.doacao.DoacaoRequest;
 import com.ongmap.models.ong.OngDetails;
 import com.ongmap.models.ong.OngRequest;
 import com.ongmap.services.OngService;
@@ -44,5 +45,9 @@ public class OngController {
         return ResponseEntity.ok(ongs.stream().map(OngDetails::new));
     }
 
+    @PutMapping
+    public ResponseEntity update(@RequestBody OngRequest ongRequest){
+        return ResponseEntity.ok(ongService.update(ongRequest.toOng()));
+    }
 
 }

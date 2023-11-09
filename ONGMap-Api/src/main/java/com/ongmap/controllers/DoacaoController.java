@@ -6,11 +6,10 @@ import com.ongmap.models.ong.OngRequest;
 import com.ongmap.services.DoacaoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
@@ -34,5 +33,11 @@ public class DoacaoController {
         var aux = doacaoService.create(doacaoAux);
         var uri = uriBuilder.path("/doacao/{cpf}").buildAndExpand(aux.getId()).toUri();
         return ResponseEntity.created(uri).body(new DinheiroResponse((Dinheiro) doacaoAux));
+    }
+
+    @GetMapping
+    public ResponseEntity findAll(@PageableDefault Pageable page){
+        var aux = doacaoService.findAll(page);
+        return ResponseEntity.ok(aux);
     }
 }

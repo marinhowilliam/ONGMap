@@ -6,5 +6,6 @@ import java.util.Date;
 public record DoacaoResponse(Date dataDoacao, String informacaoRelevante, TipoDoacao tipoDoacao, BigDecimal valor) {
 
 
+
 }
 
