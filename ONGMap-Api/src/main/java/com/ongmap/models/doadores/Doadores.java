@@ -19,5 +19,5 @@ public class Doadores {
     private String nome;
     private String contato;
     @Embedded
-    private String endereco;
+    private Endereco endereco;
 }

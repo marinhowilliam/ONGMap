@@ -15,6 +15,7 @@ public class DoacaoService {
 
     private ModelMapper mapper;
 
+    @Autowired
     public DoacaoService(DoacaoRepository doacaoRepository, ModelMapper mapper){
         this.doacaoRepository = doacaoRepository;
         this.mapper = mapper;

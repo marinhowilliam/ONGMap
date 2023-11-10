@@ -59,6 +59,12 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>

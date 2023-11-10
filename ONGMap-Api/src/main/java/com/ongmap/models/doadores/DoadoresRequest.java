@@ -9,7 +9,7 @@ public record DoadoresRequest(@Pattern(regexp = "[0-9]{11}", message = "CPF inv√
                               String nome,
                               @NotBlank(message = "Contato n√£o pode ser vazio")
                               String contato,
-                              String endereco) {
+                              Endereco endereco) {
     public Doadores ToDoadores(){
         return new Doadores(cpf, nome, contato, endereco);
     }

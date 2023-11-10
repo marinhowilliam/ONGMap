@@ -11,6 +11,6 @@ public record EventosRequest(@NotBlank
                              @NotBlank
                              String data) {
     public Eventos ToEventos(){
-        return new Eventos(nome, objetivo,local, data);
+        return new Eventos(null, nome, objetivo,local, data);
     }
 }

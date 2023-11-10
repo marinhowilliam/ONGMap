@@ -40,5 +40,7 @@ public class ParceirosController {
         return ResponseEntity.ok(parceiros.stream().map(ParceiroDetails::new));
     }
 
+    //TODO: Fazer o metodo atualizar
+
 
 }

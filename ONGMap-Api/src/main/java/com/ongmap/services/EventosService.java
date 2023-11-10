@@ -3,9 +3,11 @@ package com.ongmap.services;
 import com.ongmap.models.evento.Eventos;
 import com.ongmap.repositories.EventosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EventosService {
 
     @Autowired
@@ -15,12 +17,12 @@ public class EventosService {
         return eventosRepository.save(eventos);
     }
 
-    public Eventos getBynome(String nome){
-        return eventosRepository.getReferenceById(nome);
+    public Eventos getById(Long id){
+        return eventosRepository.getReferenceById(id);
     }
 
-    public void delate(String nome){
-        eventosRepository.getReferenceById(nome);
+    public void delete(Long id){
+        eventosRepository.getReferenceById(id);
     }
 
     public List<Eventos> findAll() {
@@ -28,7 +30,7 @@ public class EventosService {
     }
 
     public Eventos updade(Eventos eventos) {
-        var eventosAux = eventosRepository.getReferenceById(eventos.getNome());
+        var eventosAux = eventosRepository.getReferenceById(eventos.getId());
         if (eventos.getNome() != null) {
             eventosAux.setNome(eventos.getNome());
         }

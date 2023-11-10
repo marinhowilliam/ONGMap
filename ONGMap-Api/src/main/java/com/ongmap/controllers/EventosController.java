@@ -15,8 +15,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("/eventos")
 public class EventosController {
 
-    @Autowired
-    private EventosService eventosService;
+
+    private final EventosService eventosService;
+
+    public EventosController(EventosService eventosService) {
+        this.eventosService = eventosService;
+    }
 
     @PostMapping
     public ResponseEntity create(@RequestBody EventosRequest eventos, UriComponentsBuilder builder){
