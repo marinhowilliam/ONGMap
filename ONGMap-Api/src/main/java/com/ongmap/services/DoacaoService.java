@@ -43,7 +43,7 @@ public class DoacaoService {
             mapper.map(doacao, doacaoAux);
             return doacaoRepository.save(doacaoAux);
         }else {
-            throw new RuntimeException("Doação não encontrado");
+            throw new RuntimeException("Doação não encontrada");
         }
     }
 }

@@ -6,11 +6,13 @@ import com.ongmap.models.doadores.DoadoresDetails;
 import com.ongmap.models.doadores.DoadoresRequest;
 import com.ongmap.models.evento.EventosDetails;
 import com.ongmap.services.DoadoresService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/doadores")
@@ -20,10 +22,11 @@ public class DoadoresController {
     private DoadoresService doadoresService;
 
     @PostMapping
-    public ResponseEntity create(DoadoresRequest doadores){
+    public ResponseEntity create(@RequestBody @Valid DoadoresRequest doadores, UriComponentsBuilder uriBuilder){
         var doadoresAux = doadores.ToDoadores();
         var aux = doadoresService.create(doadoresAux);
-        return ResponseEntity.ok(new DoadoresDetails(aux));
+        var uri = uriBuilder.path("/doadores/{cpf}").buildAndExpand(doadores.cpf()).toUri();
+        return ResponseEntity.created(uri).body(new DoadoresDetails(aux));
     }
 
     @GetMapping("/{cpf}")

@@ -49,5 +49,4 @@ public class OngController {
     public ResponseEntity update(@RequestBody OngRequest ongRequest){
         return ResponseEntity.ok(ongService.update(ongRequest.toOng()));
     }
-
 }

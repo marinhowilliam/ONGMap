@@ -46,4 +46,9 @@ public class EventosService {
         }
         return eventosAux;
     }
+
+    public Object update(Eventos eventos) {
+        return eventos;
+    }
+
 }

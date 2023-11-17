@@ -27,19 +27,28 @@ public class DoacaoController {
         return ResponseEntity.created(uri).body(new DinheiroResponse((Dinheiro) aux));
     }
 
-    @PostMapping("/diversos")
-    public ResponseEntity createD(@RequestBody @Valid DoacaoRequest doacao, UriComponentsBuilder uriBuilder){
-        var doacaoAux = doacao.toDoacaoDiversos();
-        var aux = doacaoService.create(doacaoAux);
-        var uri = uriBuilder.path("/doacao/{cpf}").buildAndExpand(aux.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DinheiroResponse((Dinheiro) doacaoAux));
+    @GetMapping("/{id}")
+    public ResponseEntity get(@PathVariable Long id){
+        var doacao = doacaoService.getByID(id);
+        return ResponseEntity.ok(new DoacaoResponse(doacao));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable Long id){
+        doacaoService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping
     public ResponseEntity findAll(@PageableDefault Pageable page){
         var aux = doacaoService.findAll(page);
-        return ResponseEntity.ok(aux);
+        return ResponseEntity.ok(doacao.Stream().map(DoacaoResponse::new));
     }
 
-    //TODO:
+    @PutMapping
+    public ResponseEntity update(@RequestBody DoacaoRequest doacaoRequest){
+        return ResponseEntity.ok(doacaoService.update(doacaoRequest.toDoacao()));
+
+
+    }
 }

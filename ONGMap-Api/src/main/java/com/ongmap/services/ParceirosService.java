@@ -41,6 +41,10 @@ public class ParceirosService {
         }
         return parceirosAux;
     }
+
+    public Object update(Parceiros parceiros) {
+        return parceiros;
+    }
 }
 
 
