@@ -28,11 +28,7 @@ class DoacaoControllerTest {
         objectMapper = new ObjectMapper();
     }
 
-//    @Test
-//    void TestCreate() throws Exception{
-//        DoacaoRequest request = new DoacaoRequest(
-//        )
- //   }
+
 
     @Test
     void testDelete() throws Exception {

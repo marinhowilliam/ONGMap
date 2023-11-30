@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "dinheiro", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "tipo_doacao", discriminatorType = DiscriminatorType.STRING)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

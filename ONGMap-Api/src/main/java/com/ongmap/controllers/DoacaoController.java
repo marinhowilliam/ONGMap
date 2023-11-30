@@ -42,12 +42,18 @@ public class DoacaoController {
     @GetMapping
     public ResponseEntity findAll(@PageableDefault Pageable page){
         var aux = doacaoService.findAll(page);
-        return ResponseEntity.ok(doacao.Stream().map(DoacaoResponse::new));
+        return ResponseEntity.ok(aux.stream().map(DoacaoResponse::new));
     }
 
-    @PutMapping
+    @GetMapping("/dinheiro")
+    public ResponseEntity findAllDinheiro(@PageableDefault Pageable page){
+        var aux = doacaoService.findAllDinheiro(page);
+        return ResponseEntity.ok(aux);
+    }
+
+    @PutMapping("/dinheiro")
     public ResponseEntity update(@RequestBody DoacaoRequest doacaoRequest){
-        return ResponseEntity.ok(doacaoService.update(doacaoRequest.toDoacao()));
+        return ResponseEntity.ok(doacaoService.atualizar(doacaoRequest.toDoacaoDinheiro()));
 
 
     }

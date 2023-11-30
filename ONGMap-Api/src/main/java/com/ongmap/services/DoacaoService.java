@@ -1,5 +1,6 @@
 package com.ongmap.services;
 
+import com.ongmap.models.doacao.Dinheiro;
 import com.ongmap.models.doacao.Doacao;
 import com.ongmap.repositories.DoacaoRepository;
 import org.modelmapper.ModelMapper;
@@ -45,5 +46,13 @@ public class DoacaoService {
         }else {
             throw new RuntimeException("Doação não encontrada");
         }
+    }
+
+    public Page<Doacao> findAllDinheiro(Pageable page) {
+        return doacaoRepository.findByTipoDoacao("DINHEIRO");
+    }
+
+    public Page<Doacao> findAllDiversos(Pageable page) {
+        return doacaoRepository.findByTipoDoacao("DIVERSOS");
     }
 }
