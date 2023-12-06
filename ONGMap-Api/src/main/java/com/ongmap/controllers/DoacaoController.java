@@ -19,16 +19,16 @@ public class DoacaoController {
     @Autowired
     private DoacaoService doacaoService;
 
-    @PostMapping("/dinheiro")
+    @PostMapping
     public ResponseEntity create(@RequestBody @Valid DoacaoRequest doacao, UriComponentsBuilder uriBuilder){
-        var doacaoAux = doacao.toDoacaoDinheiro();
+        var doacaoAux = doacao.toDoacao();
         var aux = doacaoService.create(doacaoAux);
         var uri = uriBuilder.path("/doacao/{cpf}").buildAndExpand(aux.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DinheiroResponse((Dinheiro) aux));
+        return ResponseEntity.created(uri).body(new DoacaoResponse(aux));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity get(@PathVariable Long id){
+    public ResponseEntity findById(@PathVariable Long id){
         var doacao = doacaoService.getByID(id);
         return ResponseEntity.ok(new DoacaoResponse(doacao));
     }
@@ -45,15 +45,9 @@ public class DoacaoController {
         return ResponseEntity.ok(aux.stream().map(DoacaoResponse::new));
     }
 
-    @GetMapping("/dinheiro")
-    public ResponseEntity findAllDinheiro(@PageableDefault Pageable page){
-        var aux = doacaoService.findAllDinheiro(page);
-        return ResponseEntity.ok(aux);
-    }
-
-    @PutMapping("/dinheiro")
+    @PutMapping
     public ResponseEntity update(@RequestBody DoacaoRequest doacaoRequest){
-        return ResponseEntity.ok(doacaoService.atualizar(doacaoRequest.toDoacaoDinheiro()));
+        return ResponseEntity.ok(doacaoService.atualizar(doacaoRequest.toDoacao()));
 
 
     }

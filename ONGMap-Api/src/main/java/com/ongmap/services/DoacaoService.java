@@ -1,7 +1,7 @@
 package com.ongmap.services;
 
-import com.ongmap.models.doacao.Dinheiro;
 import com.ongmap.models.doacao.Doacao;
+import com.ongmap.models.doacao.DoacaoRequest;
 import com.ongmap.repositories.DoacaoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +12,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class DoacaoService {
 
-    private DoacaoRepository doacaoRepository;
+    private final DoacaoRepository doacaoRepository;
 
-    private ModelMapper mapper;
+    private final ModelMapper mapper;
 
     @Autowired
-    public DoacaoService(DoacaoRepository doacaoRepository, ModelMapper mapper){
+    public DoacaoService(DoacaoRepository doacaoRepository, ModelMapper mapper) {
         this.doacaoRepository = doacaoRepository;
         this.mapper = mapper;
     }
@@ -48,11 +48,5 @@ public class DoacaoService {
         }
     }
 
-    public Page<Doacao> findAllDinheiro(Pageable page) {
-        return doacaoRepository.findByTipoDoacao("DINHEIRO");
-    }
 
-    public Page<Doacao> findAllDiversos(Pageable page) {
-        return doacaoRepository.findByTipoDoacao("DIVERSOS");
-    }
 }
